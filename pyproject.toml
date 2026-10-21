@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pfmea-checker"
+version = "0.1.0"
+description = "PFMEA 工作表结构校验与 RPN/帕累托分析 CLI / PFMEA worksheet checker with RPN and Pareto analysis"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "aoyexiaoqi"}]
+requires-python = ">=3.9"
+keywords = ["pfmea", "fmea", "rpn", "quality", "manufacturing", "process-engineering"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Intended Audience :: Manufacturing",
+  "Natural Language :: Chinese (Simplified)",
+  "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-cov"]
+
+[project.scripts]
+pfmea-check = "pfmea_checker.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aoyexiaoqi/pfmea-checker"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
